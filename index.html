@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>مخبز لمة  | مخبز طازج كل يوم</title>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--bg:#fff8ee;--card:#ffffff;--text:#3b2416;--muted:#7a6252;--accent:#c8742b;--accent2:#f3dcc0;--line:#ecd9c0}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1e1510;--card:#2b1e16;--text:#f5e6d3;--muted:#b9a08a;--accent:#e49a52;--accent2:#3d2b1e;--line:#42301f}}
+:root[data-theme="dark"]{--bg:#1e1510;--card:#2b1e16;--text:#f5e6d3;--muted:#b9a08a;--accent:#e49a52;--accent2:#3d2b1e;--line:#42301f}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Tahoma,"Segoe UI",Arial,sans-serif;line-height:1.7}
+header{position:sticky;top:env(safe-area-inset-top,0px);display:flex;justify-content:space-between;align-items:center;padding:12px 5%;background:var(--bg);border-bottom:1px solid var(--line)}
+.logo{font-weight:700;font-size:1.3rem;color:var(--accent)}
+nav a{margin-inline-start:18px;color:var(--text);text-decoration:none;font-size:.95rem}
+.hero{text-align:center;padding:70px 5% 60px;background:linear-gradient(var(--accent2),var(--bg))}
+.hero .big{font-size:4rem}
+.hero h1{margin:.2em 0;font-size:clamp(1.8rem,5vw,3rem)}
+.hero p{color:var(--muted);max-width:520px;margin:0 auto 22px}
+.btn{display:inline-block;background:var(--accent);color:#fff;padding:10px 26px;border-radius:24px;text-decoration:none}
+section{padding:50px 5%;max-width:1000px;margin:auto}
+h2{text-align:center;margin:0 0 24px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;text-align:center}
+.card .e{font-size:3rem}
+.card h3{margin:.3em 0 0;font-size:1.05rem}
+.card small{color:var(--muted)}
+.price{color:var(--accent);font-weight:700;margin-top:6px}
+.about,.contact{text-align:center;color:var(--muted);max-width:640px;margin:auto}
+.contact p{margin:6px 0}
+.add{background:var(--accent);color:#fff;border:0;border-radius:14px;padding:5px 14px;margin-top:8px;cursor:pointer;font-family:inherit}
+.cart{margin-inline-end:8px}
+footer{text-align:center;padding:24px;color:var(--muted);border-top:1px solid var(--line)
+}
+
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">مخبز لمة   </div>
+  <nav><a href="#menu">القائمة</a><a href="#about">عنّا</a><a href="#contact">تواصل</a></nav>
+  <div><span class="cart">🛒 <span id="count">0</span></span> <button class="add" onclick="changeTheme()">🌙</button></div>
+</header>
+
+<div class="hero">
+  <h1>خبز طازج من الفرن لباب بيتك</h1>
+  <p>نخبز كل صباح بمكونات طبيعية وحب.</p>
+  <a class="btn" href="#menu">تصفّح القائمة</a>
+</div>
+
+<section id="menu">
+  <h2>قائمتنا</h2>
+  <div class="grid">
+    <div class="card"><div class="e"></div><h3>خبز صامولي</h3><small>طري ومناسب للسندويتشات</small><div class="price">6 ر.س</div><button class="add" onclick="addToCart()">أضف للسلة</button></div>
+    <div class="card"><div class="e"></div><h3>باغيت فرنسي</h3><small>مقرمش من برا وطري من جوا</small><div class="price">8 ر.س</div><button class="add" onclick="addToCart()">أضف للسلة</button></div>
+    <div class="card"><div class="e"></div><h3>كرواسون زبدة</h3><small>طبقات ذهبية بزبدة طبيعية</small><div class="price">9 ر.س</div><button class="add" onclick="addToCart()">أضف للسلة</button></div>
+    <div class="card"><div class="e"></div><h3>فطيرة جبن</h3><small>محشية جبن ساخنة</small><div class="price">7 ر.س</div><button class="add" onclick="addToCart()">أضف للسلة</button></div>
+    <div class="card"><div class="e"></div><h3>كيكة شوكولاتة</h3><small>غنية بالكاكاو الداكن</small><div class="price">15 ر.س</div><button class="add" onclick="addToCart()">أضف للسلة</button></div>
+    <div class="card"><div class="e"></div><h3>دونات</h3><small>بتغطية سكر وشوكولاتة</small><div class="price">6 ر.س</div><button class="add" onclick="addToCart()">أضف للسلة</button></div>
+    <div class="card"><div class="e"></div><h3>كوكيز</h3><small>برقائق شوكولاتة</small><div class="price">5 ر.س</div><button class="add" onclick="addToCart()">أضف للسلة</button></div>
+    <div class="card"><div class="e"></div><h3>قهوة عربية</h3><small>بالهيل والزعفران</small><div class="price">10 ر.س</div><button class="add" onclick="addToCart()">أضف للسلة</button></div>
+  </div>
+</section>
+
+<section id="about">
+  <h2>عن المخبز</h2>
+  <p class="about">بدأنا بفكرة بسيطة: خبز ومعجنات بطعم البيت. كل عجينة تتخمّر ببطء، وكل منتج يُخبز طازج يومياً بدون مواد حافظة.</p>
+</section>
+
+<section id="contact">
+  <h2>تواصل معنا</h2>
+  <div class="contact">
+    <p>📍 الرياض، حي النخيل</p>
+    <p>📞 0500000000</p>
+    <p>🕕 يومياً من 6 ص إلى 10 م</p>
+  </div>
+</section>
+
+<footer>© 2026 مخبز لمة  </footer>
+
+<script>
+var count = 0;
+
+function addToCart() {
+  count = count + 1;
+  document.getElementById("count").innerHTML = count;
+}
+
+function changeTheme() {
+  var page = document.documentElement;
+  if (page.getAttribute("data-theme") == "dark") {
+    page.setAttribute("data-theme", "light");
+  } else {
+    page.setAttribute("data-theme", "dark");
+  }
+}
+</script>
+</body>
+</html>
